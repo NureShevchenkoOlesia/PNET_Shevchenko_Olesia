@@ -1,0 +1,26 @@
+@page
+@model LabAccessSystem.Pages.Assignments.CreateModel
+@{
+    ViewData["Title"] = "Create Assignment";
+}
+
+<h1>Create Assignment</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Assignment.EmployeeId">Employee</label>
+        <select asp-for="Assignment.EmployeeId" asp-items="Model.EmployeesSelectList" class="form-control"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Assignment.EquipmentId">Equipment</label>
+        <select asp-for="Assignment.EquipmentId" asp-items="Model.EquipmentSelectList" class="form-control"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Assignment.AssignedDate"></label>
+        <input asp-for="Assignment.AssignedDate" class="form-control" type="date" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Assign</button>
+</form>
